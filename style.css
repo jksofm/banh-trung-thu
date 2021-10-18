@@ -1,0 +1,201 @@
+*{
+    padding: 0px;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(19, 19, 95);
+    font-family: 'Bonheur Royale',cursive;
+}
+.base{
+    width: 200px;
+    height: 200px;
+    background-color: #d13d3d;
+    box-shadow: inset 0px 5px 10px black,
+                 0px 5px 10px black;
+    border : 5px solid #c00000;
+    position: relative;
+    display: grid;
+    grid-template-columns: 87px 87px;
+    grid-row: auto auto;
+    grid-row-gap: 5px;
+    grid-column-gap: 12px;
+    transform: rotate(-30deg);
+
+
+    
+
+}
+.mooncake-contain{
+   
+    margin-top: 150px;
+}
+.base::before{
+    content: "";
+    width: 100%;
+    height: 5px;
+    background-color: #c00000;
+    position: absolute;
+    top: 50%;
+    display: block;
+    /* top: 50%;
+    transform:  translateX(-50%); */
+    box-shadow: 0px 5px 10px black;
+}
+.base::after{
+    content: "";
+    width: 5px;
+    height: 100%;
+    background-color: #c00000;
+    position: absolute;
+    left: 50%;
+    display: block;
+    /* top: 50%;
+    transform:  translateX(-50%); */
+    box-shadow: 0px 0px 5px black;
+    z-index: 1;
+}
+.base img{
+width: 87px;
+}
+.cover{
+    width: 200px;
+    height: 200px;
+    background-color: rgb(218, 25, 25);
+    position: relative;
+    z-index: 3;
+    top:-150px;
+    left: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 10px 5px black;
+    animation: cover linear 1s;
+}
+.cover::before{
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border: 2px solid black;
+    filter: blur(1px);
+    
+}
+.cover img{
+    width: 170px;
+}
+.title  {
+    font-size: 100px;
+    color: rgb(255,145,0);
+    position: relative;
+    top: -100px;
+    font-weight: 600;
+    text-shadow: 5px 5px 5px black;
+    animation: textgrow linear 2s infinite;
+}
+.title .year{
+    text-align: center;
+}
+.giangimg1{
+    width: 300px;
+    position: absolute;
+    top: 150px;
+    left: 100px;
+    box-shadow: 0 5px 10px rgb(255,102,0);
+    animation: imgup ease 5s infinite;
+}
+.giangimg2{
+    width: 300px;
+    position: absolute;
+    top: 150px;
+    right: 100px;
+    box-shadow: 0 5px 10px rgb(255,102,0);
+    display: block;
+    animation: imgright ease 5s infinite;
+
+
+}
+@keyframes cover{
+    from{
+        top:100px ;
+        
+    }
+    to{
+        top: 0;
+        
+    }
+}
+@keyframes text {
+    0%{
+        font-size: 0px;
+    }
+    50%{
+        font-size: 30px;
+    }
+    100%{
+        font-size: 60px;
+    }
+}
+@keyframes textgrow{
+    0%{
+        color: rgb(255,102,0);
+        /* font-size: 30px; */
+    }
+    
+    20%{
+        color: rgb(255,102,78);
+        text-shadow: 0px 0px 5px rgb(255,102,78),
+        0px 0px 5px rgb(255,102,78),
+        0px 0px 5px rgb(255,102,78);
+        /* font-size: 100px; */
+        
+    }
+    50%{
+        color: rgb(84, 182, 54);
+        /* font-size: 30px; */
+    }
+    75%{
+        color: rgb(185, 45, 155);
+    }
+    100%{
+        color: salmon;
+    }
+}
+
+@keyframes imgup {
+    from{
+        left: 400px;
+        opacity: 0;
+    }
+    to{
+        left: 60px;
+        opacity: 1;
+    }
+    
+}
+@keyframes imgright {
+    from{
+        right: 400px;
+        opacity: 0;
+    }
+    to{
+        right: 60px;
+        opacity: 1;
+    }
+    
+}
+
+@keyframes imgdown {
+    from{
+        top: 0px;
+
+    }
+    to{
+        top: 400px
+    }
+    
+}
